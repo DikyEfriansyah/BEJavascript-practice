@@ -516,7 +516,7 @@ app.put('/job-history/:id',(req,res)=>{
     const {department_id} = req.body
 
     pool.query('update job_history set start_date = $2, end_date = $3, job_id = $4, department_id = $5 where employee_id = $1',
-    [id,d_name,manager_id,location_id],
+    [id,start,end,job_id,department_id],
     (error,result)=>{
         if(error){
             throw error
